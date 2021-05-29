@@ -16,10 +16,10 @@ function preload(){
 }
 
 function setup(){
-    Canvas = createCanvas(400,300);
+    Canvas = createCanvas(320,640);
     Canvas.center();
     Video = createCapture(VIDEO);
-    Video.size(400,300);
+    Video.size(320,640);
     Video.hide();
 
     pose_net = ml5.poseNet(Video,modelLoaded);
@@ -41,7 +41,11 @@ function gotPoses(result){
             eye_rightX = result[0].pose.rightEye.x - 20;
             eye_rightY = result[0].pose.rightEye.y - 15;
 
-        
+            mouthX = result[0].pose.nose.x;
+            mouthY = result[0].pose.nose.y;
+
+            hairX = result[0].pose.nose.x;
+            hairY = result[0].pose.nose.y;
         }
         else{
             console.log("person not detected")
