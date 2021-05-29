@@ -12,10 +12,6 @@ hairY = 0;
 
 
 function preload(){
-    clown_nose = loadImage('eyes.png');
-    mouth = loadImage('lips.png');
-    hair = loadImage('hair.png');
-    Hulk = loadImage('Hulk.png');
     IronMan = loadImage('IronMan.png');
 }
 
@@ -45,11 +41,7 @@ function gotPoses(result){
             eye_rightX = result[0].pose.rightEye.x - 20;
             eye_rightY = result[0].pose.rightEye.y - 15;
 
-            mouthX = result[0].pose.nose.x;
-            mouthY = result[0].pose.nose.y;
-
-            hairX = result[0].pose.nose.x;
-            hairY = result[0].pose.nose.y;
+        
         }
         else{
             console.log("person not detected")
