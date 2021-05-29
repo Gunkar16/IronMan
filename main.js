@@ -21,8 +21,7 @@ function setup(){
     Video = createCapture(VIDEO);
     Video.size(320,640);
     Video.hide();
-    Video.center();
-    
+
     pose_net = ml5.poseNet(Video,modelLoaded);
     pose_net.on('pose', gotPoses);
 }
@@ -33,9 +32,7 @@ function modelLoaded(){
 
 function gotPoses(result){
         if(result.length>0){
-            console.log(result);
-            console.log("nose x = " + result[0].pose.nose.x);
-            console.log("nose y = " + result[0].pose.nose.y);
+    
             eye_leftX = result[0].pose.leftEye.x - 20;
             eye_leftY = result[0].pose.leftEye.y - 15;
 
